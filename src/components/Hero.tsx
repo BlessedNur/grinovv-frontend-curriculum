@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true, jump: false })
   );
 
   const handleRegisterClick = () => {
@@ -100,22 +100,61 @@ const Hero = () => {
               plugins={[plugin.current]}
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.reset}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
             >
               <CarouselContent>
-                <CarouselItem>
-                  <div className="p-1">
-                    <Card className="shadow-xl hover:shadow-2xl transition-shadow bg-white/95 backdrop-blur-sm">
-                      <CardContent className="p-0">
-                        <img
-                          src="public/hero-image.jpg"
-                          alt="Grace Innovation Computer Training Center - Main"
-                          className="w-full h-auto object-cover"
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
+                {[
+                  {
+                    src: "/hero-image.jpg",
+                    alt: "Premium Laptop Collection - Model 1",
+                  },
+                  {
+                    src: "/laptop4 (1).jpg",
+                    alt: "Premium Laptop Collection - Model 1",
+                  },
+                  {
+                    src: "/laptop4 (2).jpg",
+                    alt: "Premium Laptop Collection - Model 2",
+                  },
+                  {
+                    src: "/laptop4 (3).jpg",
+                    alt: "Premium Laptop Collection - Model 3",
+                  },
+                  {
+                    src: "/laptop4 (4).jpg",
+                    alt: "Premium Laptop Collection - Model 4",
+                  },
+                  {
+                    src: "/laptop4 (5).jpg",
+                    alt: "Premium Laptop Collection - Model 5",
+                  },
+                  {
+                    src: "/laptop4 (6).jpg",
+                    alt: "Premium Laptop Collection - Model 6",
+                  },
+                ].map((laptop, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <Card className="shadow-xl hover:shadow-2xl transition-shadow bg-white/95 backdrop-blur-sm">
+                        <CardContent className="p-0">
+                          <div className="w-full h-72 sm:h-80 lg:h-96 overflow-hidden">
+                            <img
+                              src={laptop.src}
+                              alt={laptop.alt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
               </CarouselContent>
+              <CarouselPrevious className="left-2 bg-white/80 hover:bg-white/90 backdrop-blur-sm" />
+              <CarouselNext className="right-2 bg-white/80 hover:bg-white/90 backdrop-blur-sm" />
             </Carousel>
           </div>
         </div>
