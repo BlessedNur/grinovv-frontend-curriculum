@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom animations for hero background */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(10px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(-5px) translateY(-20px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.animate-drift {
+  animation: drift 6s ease-in-out infinite;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -74,71 +124,73 @@
     size: A4;
     margin: 0.75in 0.5in;
   }
-  
+
   .print\:hidden {
     display: none !important;
   }
-  
+
   body {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
     font-size: 11pt;
     line-height: 1.3;
   }
-  
+
   .print\:text-xs {
     font-size: 9pt !important;
   }
-  
+
   .print\:text-sm {
     font-size: 10pt !important;
   }
-  
+
   .print\:p-2 {
     padding: 8pt !important;
   }
-  
+
   .print\:p-3 {
     padding: 12pt !important;
   }
-  
+
   .print\:p-4 {
     padding: 16pt !important;
   }
-  
+
   .print\:mb-2 {
     margin-bottom: 8pt !important;
   }
-  
+
   .print\:mb-3 {
     margin-bottom: 12pt !important;
   }
-  
+
   .print\:break-inside-avoid {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  
+
   .print\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
-  
+
   .print\:gap-2 {
     gap: 8pt !important;
   }
-  
+
   .print\:gap-3 {
     gap: 12pt !important;
   }
-  
+
   /* Ensure cards don't break across pages */
   .card {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  
+
   /* Optimize spacing for print */
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     break-after: avoid;
     page-break-after: avoid;
   }

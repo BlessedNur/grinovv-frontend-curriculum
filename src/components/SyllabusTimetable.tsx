@@ -14,8 +14,8 @@ const SyllabusTimetable: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center gap-3">
+        <div className="text-center mt-10 mb-8">
+          <h1 className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center gap-3">
             <FileText className="h-10 w-10 text-blue-600" />
             Web Development Program Syllabus
           </h1>

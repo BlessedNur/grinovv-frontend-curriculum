@@ -27,14 +27,9 @@ export const syllabusData: SyllabusData = {
       duration: "Week 5-6"
     },
     {
-      name: "React Development",
+      name: "React Development & TypeScript Fundamentals",
       topics: ["Components & JSX", "Hooks & State", "Routing", "Context API", "Custom Hooks", "Performance", "Testing", "Deployment"],
       duration: "Week 7-8"
-    },
-    {
-      name: "TypeScript Fundamentals",
-      topics: ["Type System", "Interfaces & Types", "Generics", "Advanced Types", "Decorators", "Modules", "Configuration", "React + TypeScript"],
-      duration: "Week 9-10"
     }
   ],
   backend: [
@@ -52,6 +47,11 @@ export const syllabusData: SyllabusData = {
       name: "Advanced Backend",
       topics: ["Microservices", "GraphQL", "WebSockets", "Caching", "Message Queues", "Docker", "CI/CD", "Cloud Deployment"],
       duration: "Week 8-12"
+    },
+    {
+      name: "Full-Stack Integration",
+      topics: ["Connecting Frontend & Backend", "Authentication", "State Management", "Deployment", "Testing", "Performance Optimization", "Security Best Practices", "Project Showcase"],
+      duration: "Week 13-16"
     }
   ]
 };

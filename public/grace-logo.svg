@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="80" viewBox="0 0 200 80" width="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="15" cy="15" fill="#f59e0b" opacity="0.7" r="3"/>
+  <circle cx="185" cy="65" fill="#10b981" opacity="0.7" r="4"/>
+  <circle cx="40" cy="40" fill="#1e40af" r="35" stroke="#60a5fa" stroke-width="2"/>
+  <rect fill="#1e40af" height="14" width="26" x="27" y="27"/>
+  <rect fill="white" height="20" rx="2" width="30" x="25" y="25"/>
+  <rect fill="white" height="2" width="16" x="32" y="50"/>
+  <rect fill="white" height="3" width="8" x="36" y="47"/>
+  <text fill="#1e40af" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="85" y="25">GRACE</text>
+  <text fill="#6b7280" font-family="Arial, sans-serif" font-size="12" x="85" y="55">COMPUTER TRAINING CENTER</text>
+  <text fill="#f59e0b" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="85" y="40">INNOVATION</text>
+</svg>
