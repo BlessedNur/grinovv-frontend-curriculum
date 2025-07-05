@@ -27,25 +27,38 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-white border-b">
+    <section className="relative bg-white border-b overflow-hidden">
+      {/* Blurred Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url(/hero-image.jpg)",
+          filter: "blur(8px)",
+          transform: "scale(1.1)",
+        }}
+      />
+
+      {/* Overlay for better content readability */}
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+
       {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             {/* Logo/Header */}
             <div className="space-y-4">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                <span className="text-blue-600">Shaping Lives Through</span>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight drop-shadow-sm">
+                <span className="text-blue-700">Shaping Lives Through</span>
                 <br />
-                <span className="text-gray-900">Technology &</span>
+                <span className="text-gray-50">Technology &</span>
                 <br />
-                <span className="text-yellow-600">Redesigning Futures</span>
+                <span className="text-gray-900">Redesigning Futures</span>
               </h1>
             </div>
 
             {/* Tagline */}
-            <p className="text-lg text-gray-600 max-w-2xl">
+            <p className="text-lg text-gray-50 max-w-2xl font-medium drop-shadow-sm">
               Offers Quality Computer Training with hands-on experience and
               industry-standard curriculum
             </p>
@@ -54,7 +67,7 @@ const Hero = () => {
             <div className="flex items-center space-x-4">
               <Badge
                 variant="outline"
-                className="bg-red-500/20 backdrop-blur-sm border-red-500/30 text-red-700 px-4 py-2 text-base font-semibold"
+                className="bg-red-500/30 backdrop-blur-md border-red-500/50 text-gray-300 px-4 py-2 text-base font-semibold shadow-lg"
               >
                 THIS SEASON -10% DISCOUNT
               </Badge>
@@ -64,7 +77,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-200"
                 onClick={handleRegisterClick}
               >
                 Register Now
@@ -72,7 +85,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3"
+                className="border-blue-600 text-blue-700 hover:bg-blue-50 font-semibold px-8 py-3 bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-200"
                 onClick={handleViewProgramsClick}
               >
                 View Programs
@@ -91,12 +104,12 @@ const Hero = () => {
               <CarouselContent>
                 <CarouselItem>
                   <div className="p-1">
-                    <Card className="shadow-lg hover:shadow-xl transition-shadow">
+                    <Card className="shadow-xl hover:shadow-2xl transition-shadow bg-white/95 backdrop-blur-sm">
                       <CardContent className="p-0">
                         <img
-                          src="/carousel1.jpg"
+                          src="public/hero-image.jpg"
                           alt="Grace Innovation Computer Training Center - Main"
-                          className="w-full h-auto  object-cover"
+                          className="w-full h-auto object-cover"
                         />
                       </CardContent>
                     </Card>
@@ -109,10 +122,10 @@ const Hero = () => {
       </div>
 
       {/* Programs Strip */}
-      <div className="bg-gray-50 py-6 border-t">
+      <div className="relative z-10 bg-gray-50/95 backdrop-blur-sm py-6 border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-4">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 drop-shadow-sm">
               Our Training Programs Include:
             </h3>
           </div>
@@ -124,7 +137,10 @@ const Hero = () => {
               "Web Development",
               "Computer Maintenance",
             ].map((program, index) => (
-              <Card key={index} className="text-center py-3 shadow-sm">
+              <Card
+                key={index}
+                className="text-center py-3 shadow-md bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-200"
+              >
                 <CardContent className="p-2">
                   <span className="font-medium text-gray-700 text-sm">
                     {program}
