@@ -15,9 +15,9 @@ const Tutorial = () => {
 
       {/* Tutorial Header */}
       <div className="print:hidden bg-white shadow-sm border-b mb-4 sm:mb-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
               Frontend Development Tutorial
             </h1>
             <p className="text-lg text-gray-600 mb-4">

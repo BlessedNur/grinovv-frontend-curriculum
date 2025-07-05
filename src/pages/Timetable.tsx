@@ -6,9 +6,11 @@ import Navbar from "@/components/Navbar";
 const Timetable = () => {
   return (
     <div>
-      <Navbar/>
-      <SyllabusTimetable />
-      <Footer />
+      <Navbar />
+      <div className="pt-16">
+        <SyllabusTimetable />
+        <Footer />
+      </div>
     </div>
   );
 };

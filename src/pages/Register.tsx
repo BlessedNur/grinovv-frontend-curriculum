@@ -24,7 +24,7 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50 py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50 py-12 px-4 pt-28">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
@@ -189,7 +189,9 @@ const Register = () => {
                     <h4 className="font-semibold text-blue-900">
                       Basic Package
                     </h4>
-                    <p className="text-2xl font-bold text-blue-600">₦50,000</p>
+                    <p className="text-2xl font-bold text-blue-600">
+                      50,000 XAF
+                    </p>
                     <p className="text-sm text-gray-600">
                       Single program enrollment
                     </p>
@@ -201,7 +203,9 @@ const Register = () => {
                       </h4>
                       <Badge className="bg-green-600">POPULAR</Badge>
                     </div>
-                    <p className="text-2xl font-bold text-green-600">₦80,000</p>
+                    <p className="text-2xl font-bold text-green-600">
+                      80,000 XAF
+                    </p>
                     <p className="text-sm text-gray-600">
                       Multiple programs + extras
                     </p>
