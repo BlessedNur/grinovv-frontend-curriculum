@@ -107,8 +107,9 @@ const Footer = () => {
                     <span className="text-xs">📍</span>
                   </div>
                   <div>
-                    <p className="text-gray-300">123 Technology Street</p>
-                    <p className="text-gray-400">Accra, Ghana</p>
+                    <p className="text-gray-300">New Town Airport Douala, Cameroon</p>
+                    <p className="text-gray-400">Village Elf - After Carrefour Tam Tam</p>
+                    <p className="text-gray-400">Beside Faith Medical Center</p>
                   </div>
                 </div>
 
@@ -116,14 +117,14 @@ const Footer = () => {
                   <div className="w-5 h-5 rounded-full bg-green-600 flex items-center justify-center">
                     <span className="text-xs">📞</span>
                   </div>
-                  <p className="text-gray-300">+233 24 123 4567</p>
+                  <p className="text-gray-300">(+237) 650 15 95 13</p>
                 </div>
 
                 <div className="flex items-center space-x-3">
                   <div className="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center">
                     <span className="text-xs">📧</span>
                   </div>
-                  <p className="text-gray-300">info@graceinnovation.com</p>
+                  <p className="text-gray-300">sirbronu@gmail.com</p>
                 </div>
               </div>
             </div>
