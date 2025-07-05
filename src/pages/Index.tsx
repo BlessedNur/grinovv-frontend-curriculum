@@ -12,7 +12,7 @@ import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
@@ -28,189 +28,232 @@ const Index = () => {
         </div>
 
         {/* IT Services Section */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Complete <span className="text-blue-600">IT Solutions</span>
+        <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500 rounded-full blur-xl"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 bg-purple-500 rounded-full blur-xl"></div>
+            <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-green-500 rounded-full blur-xl"></div>
+            <div className="absolute bottom-32 right-1/3 w-18 h-18 bg-yellow-500 rounded-full blur-xl"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Enhanced Header */}
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center justify-center p-2 bg-blue-100 rounded-full mb-4">
+                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">IT</span>
+                </div>
+              </div>
+              <h2 className="text-3xl sm:text-3xl font-bold text-gray-900 mb-6">
+                Complete{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  IT Solutions
+                </span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                From training to hardware sales, we provide comprehensive IT
-                services for individuals and businesses
+              <p className="text-x text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                From comprehensive training programs to cutting-edge hardware
+                sales, we provide
+                <span className="font-semibold text-blue-600">
+                  {" "}
+                  end-to-end IT services
+                </span>{" "}
+                for individuals and businesses
               </p>
-              <div className="w-24 h-1 bg-blue-600 mx-auto mt-6"></div>
+              <div className="flex items-center justify-center mt-8">
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full mx-2"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full"></div>
+              </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+            {/* Main Services Grid - Redesigned with Compact Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {/* Computer Training */}
-              <div className="xl:col-span-2">
-                <Card className="h-full shadow-md hover:shadow-xl transition-all duration-300 group border-0 bg-gradient-to-br from-blue-50 to-white">
-                  <CardHeader className="text-center pb-4">
-                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <span className="text-xl text-white">🖥️</span>
+              <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white hover:scale-105 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-200 to-transparent rounded-full -translate-y-10 translate-x-10 opacity-40 group-hover:opacity-60 transition-opacity"></div>
+
+                <CardHeader className="pb-4 relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-lg text-white">🖥️</span>
                     </div>
-                    <CardTitle className="text-lg font-bold text-gray-900">
-                      Computer Training
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <ul className="space-y-1.5 text-sm text-gray-600 mb-4">
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
-                        Basic Computer Literacy
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
-                        Microsoft Office Suite
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
-                        Web Development
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
-                        Graphics Design
-                      </li>
-                    </ul>
-                    <Badge className="bg-green-500 text-white text-xs px-3 py-1 shadow-sm">
-                      Most Popular
-                    </Badge>
-                  </CardContent>
-                </Card>
-              </div>
+                    <div>
+                      <CardTitle className="text-lg font-bold text-gray-900">
+                        Computer Training
+                      </CardTitle>
+                      <p className="text-gray-600 text-xs">
+                        Professional courses
+                      </p>
+                    </div>
+                  </div>
+                  <Badge className="bg-yellow-100 text-yellow-800 text-xs w-fit">
+                    ⭐ Most Popular
+                  </Badge>
+                </CardHeader>
+
+                <CardContent className="pt-0 relative z-10">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    {[
+                      { name: "Basic Computer", icon: "💻" },
+                      { name: "MS Office", icon: "📊" },
+                      { name: "Web Dev", icon: "🌐" },
+                      { name: "Graphics", icon: "🎨" },
+                    ].map((course, index) => (
+                      <div
+                        key={index}
+                        className="text-center p-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+                      >
+                        <div className="text-sm mb-1">{course.icon}</div>
+                        <p className="text-xs font-medium text-gray-800">
+                          {course.name}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-between items-center bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-lg">
+                    <div className="text-center">
+                      <p className="text-xs text-gray-600">Success Rate</p>
+                      <p className="text-lg font-bold text-blue-600">95%</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-xs text-gray-600">Graduates</p>
+                      <p className="text-lg font-bold text-purple-600">500+</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* Document Services */}
-              <div className="xl:col-span-2">
-                <Card className="h-full shadow-md hover:shadow-xl transition-all duration-300 group border-0 bg-gradient-to-br from-purple-50 to-white">
-                  <CardHeader className="text-center pb-4">
-                    <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <span className="text-xl text-white">🖨️</span>
+              <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white hover:scale-105 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-200 to-transparent rounded-full -translate-y-10 translate-x-10 opacity-40 group-hover:opacity-60 transition-opacity"></div>
+
+                <CardHeader className="pb-4 relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-lg text-white">🖨️</span>
                     </div>
-                    <CardTitle className="text-lg font-bold text-gray-900">
-                      Document Services
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <ul className="space-y-1.5 text-sm text-gray-600 mb-4">
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>
-                        High-Quality Printing
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>
-                        Photocopying & Scanning
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>
-                        Lamination Services
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></span>
-                        Passport Photos
-                      </li>
-                    </ul>
-                    <Badge className="bg-blue-500 text-white text-xs px-3 py-1 shadow-sm">
-                      24/7 Available
+                    <div>
+                      <CardTitle className="text-lg font-bold text-gray-900">
+                        Document Services
+                      </CardTitle>
+                      <p className="text-gray-600 text-xs">
+                        Printing & documentation
+                      </p>
+                    </div>
+                  </div>
+                  <Badge className="bg-green-100 text-green-800 text-xs w-fit">
+                    ⚡ 24/7 Available
+                  </Badge>
+                </CardHeader>
+
+                <CardContent className="pt-0 relative z-10">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    {[
+                      { name: "Printing", icon: "📄" },
+                      { name: "Photocopying", icon: "📋" },
+                      { name: "Scanning", icon: "📱" },
+                      { name: "Passport Photos", icon: "📸" },
+                    ].map((service, index) => (
+                      <div
+                        key={index}
+                        className="text-center p-2 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors"
+                      >
+                        <div className="text-sm mb-1">{service.icon}</div>
+                        <p className="text-xs font-medium text-gray-800">
+                          {service.name}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-center gap-2">
+                    <Badge className="bg-purple-100 text-purple-800 text-xs px-2 py-1">
+                      High Quality
                     </Badge>
-                  </CardContent>
-                </Card>
-              </div>
+                    <Badge className="bg-green-100 text-green-800 text-xs px-2 py-1">
+                      Best Rates
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* Hardware Sales */}
-              <div className="xl:col-span-2">
-                <Card className="h-full shadow-md hover:shadow-xl transition-all duration-300 group border-0 bg-gradient-to-br from-green-50 to-white">
-                  <CardHeader className="text-center pb-4">
-                    <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <span className="text-xl text-white">💻</span>
+              <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white hover:scale-105 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-200 to-transparent rounded-full -translate-y-10 translate-x-10 opacity-40 group-hover:opacity-60 transition-opacity"></div>
+
+                <CardHeader className="pb-4 relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-lg text-white">💻</span>
                     </div>
-                    <CardTitle className="text-lg font-bold text-gray-900">
-                      Hardware Sales
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <ul className="space-y-1.5 text-sm text-gray-600 mb-4">
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
-                        Laptops & Desktops
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
-                        Computer Accessories
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
-                        Software Installation
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
-                        Technical Support
-                      </li>
-                    </ul>
-                    <Badge className="bg-yellow-500 text-white text-xs px-3 py-1 shadow-sm">
-                      Best Prices
+                    <div>
+                      <CardTitle className="text-lg font-bold text-gray-900">
+                        Hardware Sales
+                      </CardTitle>
+                      <p className="text-gray-600 text-xs">
+                        Computers & accessories
+                      </p>
+                    </div>
+                  </div>
+                  <Badge className="bg-orange-100 text-orange-800 text-xs w-fit">
+                    🏷️ Best Prices
+                  </Badge>
+                </CardHeader>
+
+                <CardContent className="pt-0 relative z-10">
+                  <div className="space-y-2 mb-4">
+                    {[
+                      { name: "Laptops & Desktops", price: "From $299" },
+                      { name: "Accessories", price: "From $15" },
+                      { name: "Software", price: "From $25" },
+                      { name: "Tech Support", price: "24/7" },
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-2 bg-green-50 rounded-lg hover:bg-green-100 transition-colors"
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                          <span className="text-xs font-medium text-gray-800">
+                            {item.name}
+                          </span>
+                        </div>
+                        <span className="text-xs font-bold text-green-600">
+                          {item.price}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-center">
+                    <Badge className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs px-3 py-1">
+                      Warranty Included
                     </Badge>
-                  </CardContent>
-                </Card>
-              </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
-            {/* Additional Services Row */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-              <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
-                <CardContent className="p-4 text-center">
-                  <div className="w-10 h-10  flex items-center justify-center mx-auto mb-2 group-hover:bg-orange-200 transition-colors">
-                    <span className="text-lg">🔧</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
-                    Tech Repair
-                  </h4>
-                  <p className="text-xs text-gray-600 mt-1">
-                    Quick fixes & maintenance
+            {/* Call-to-Action Section */}
+            <div className="text-center mt-16">
+              <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-sm p-6 shadow-xl">
+                <div className="text-3xl">🚀</div>
+                <div className="text-left">
+                  <h3 className="font-bold text-gray-900 text-lg">
+                    Ready to Get Started?
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Discover how our IT solutions can transform your business
                   </p>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
-                <CardContent className="p-4 text-center">
-                  <div className="w-10 h-10 bg-indigo-100  flex items-center justify-center mx-auto mb-2 group-hover:bg-indigo-200 transition-colors">
-                    <span className="text-lg">☁️</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
-                    Cloud Services
-                  </h4>
-                  <p className="text-xs text-gray-600 mt-1">
-                    Backup & storage solutions
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
-                <CardContent className="p-4 text-center">
-                  <div className="w-10 h-10 bg-red-100  flex items-center justify-center mx-auto mb-2 group-hover:bg-red-200 transition-colors">
-                    <span className="text-lg">🔒</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
-                    Security
-                  </h4>
-                  <p className="text-xs text-gray-600 mt-1">
-                    Antivirus & data protection
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
-                <CardContent className="p-4 text-center">
-                  <div className="w-10 h-10 bg-teal-100  flex items-center justify-center mx-auto mb-2 group-hover:bg-teal-200 transition-colors">
-                    <span className="text-lg">📊</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
-                    Data Recovery
-                  </h4>
-                  <p className="text-xs text-gray-600 mt-1">
-                    Lost file restoration
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+                <Link to="/contact">
+                  <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                    Get Quote →
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -224,7 +267,7 @@ const Index = () => {
                   Modern <span className="text-blue-600">Cyber Cafe</span>{" "}
                   Experience
                 </h2>
-                <p className="text-lg text-gray-600 mb-6">
+                <p className="text-x text-gray-600 mb-6">
                   Access high-speed internet, modern computers, and a
                   comfortable environment for all your digital needs. Perfect
                   for students, professionals, and casual users.
@@ -344,7 +387,7 @@ const Index = () => {
                 Why Choose{" "}
                 <span className="text-blue-600">Grace Innovation</span>?
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+              <p className="text-x text-gray-600 max-w-3xl mx-auto mb-6">
                 We combine quality training, modern facilities, and excellent
                 customer service to deliver the best IT experience
               </p>
@@ -490,31 +533,77 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Ready to Transform Your Future?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of successful graduates who chose Grace Innovation
-              for their tech education and career advancement.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* CTA Section - Enhanced with Background Image */}
+        <section className="py-20 relative overflow-hidden">
+          {/* Background Image with Blur Effect */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url(/hero-image.jpg)",
+              filter: "blur(8px)",
+              transform: "scale(1.1)",
+            }}
+          ></div>
+
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/85 to-purple-900/80"></div>
+
+          {/* Animated background elements */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-40 h-40 bg-yellow-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-green-300 rounded-full blur-2xl animate-pulse delay-500"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            {/* Enhanced Header */}
+            <div className="mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 drop-shadow-lg">
+                Ready to Transform Your
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+                  {" "}
+                  Future
+                </span>
+                ?
+              </h2>
+
+              <p className="text-x text-blue-100 mb-7 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                Join thousands of successful graduates who chose Grace
+                Innovation for their tech education and career advancement.
+                <span className="font-semibold text-yellow-300">
+                  {" "}
+                  Your journey starts here!
+                </span>
+              </p>
+            </div>
+
+            {/* Enhanced Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/register">
                 <Button
                   size="lg"
-                  className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3"
+                  className="group bg-white text-blue-700 hover:bg-yellow-50 font-bold px-10 py-4 text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-2 border-transparent hover:border-yellow-300"
                 >
-                  Start Your Journey Today
+                  <span className="flex items-center gap-2">
+                    🎯 Start Your Journey Today
+                    <span className="group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </span>
                 </Button>
               </Link>
+
               <Link to="/tutorial">
                 <Button
                   size="lg"
-                  className="border-white bg-gray-600 text-white font-semibold px-8 py-3"
+                  className="group bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 font-bold px-10 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-white/30 hover:border-white/60"
                 >
-                  Explore Our Curriculum
+                  <span className="flex items-center gap-2">
+                    📚 Explore Our Curriculum
+                    <span className="group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </span>
                 </Button>
               </Link>
             </div>

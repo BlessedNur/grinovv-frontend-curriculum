@@ -23,6 +23,15 @@ const Hero = () => {
     })
   );
 
+  const programsPlugin = React.useRef(
+    Autoplay({
+      delay: 2500,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+      jump: false,
+    })
+  );
+
   const handleRegisterClick = () => {
     navigate("/register");
   };
@@ -166,32 +175,114 @@ const Hero = () => {
       </div>
 
       {/* Programs Strip */}
-      <div className="relative z-10 bg-gray-50/95 backdrop-blur-sm py-6 border-t">
+      <div className="relative z-10 bg-gradient-to-r from-blue-50/95 via-white/95 to-purple-50/95 backdrop-blur-sm py-8 border-t shadow-inner">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-4">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2 drop-shadow-sm">
-              Our Training Programs Include:
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-2 drop-shadow-sm">
+              Our Professional Training Programs
             </h3>
+            <p className="text-sm text-gray-600 max-w-2xl mx-auto">
+              Comprehensive courses designed to shape your future in technology
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            {[
-              "Graphics Design",
-              "Software Engineering",
-              "Computer Secretariat",
-              "Web Development",
-              "Computer Maintenance",
-            ].map((program, index) => (
-              <Card
-                key={index}
-                className="text-center py-3 shadow-md bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-200"
-              >
-                <CardContent className="p-2">
-                  <span className="font-medium text-gray-700 text-sm">
-                    {program}
-                  </span>
-                </CardContent>
-              </Card>
-            ))}
+
+          <Carousel
+            className="w-full"
+            plugins={[programsPlugin.current]}
+            opts={{
+              align: "start",
+              loop: true,
+              dragFree: true,
+              containScroll: "trimSnaps",
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {[
+                {
+                  name: "Graphics Design",
+                  icon: "🎨",
+                  duration: "3-6 months",
+                  level: "Beginner to Pro",
+                },
+                {
+                  name: "Software Engineering",
+                  icon: "💻",
+                  duration: "6-12 months",
+                  level: "Professional",
+                },
+                {
+                  name: "Computer Secretariat",
+                  icon: "📝",
+                  duration: "2-4 months",
+                  level: "Essential Skills",
+                },
+                {
+                  name: "Web Development",
+                  icon: "🌐",
+                  duration: "4-8 months",
+                  level: "Full Stack",
+                },
+                {
+                  name: "Computer Maintenance",
+                  icon: "🔧",
+                  duration: "1-3 months",
+                  level: "Technical",
+                },
+                {
+                  name: "Digital Marketing",
+                  icon: "📱",
+                  duration: "2-4 months",
+                  level: "Strategic",
+                },
+                {
+                  name: "Data Analysis",
+                  icon: "📊",
+                  duration: "3-6 months",
+                  level: "Analytics",
+                },
+                {
+                  name: "Mobile App Development",
+                  icon: "📲",
+                  duration: "5-8 months",
+                  level: "Advanced",
+                },
+              ].map((program, index) => (
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                >
+                  <Card className="h-full shadow-lg bg-white/95 backdrop-blur-sm hover:bg-white hover:shadow-xl hover:scale-105 transition-all duration-300 border-0 group">
+                    <CardContent className="p-4 text-center h-full flex flex-col justify-between">
+                      <div>
+                        <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                          {program.icon}
+                        </div>
+                        <h4 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-blue-700 transition-colors">
+                          {program.name}
+                        </h4>
+                        <div className="space-y-1">
+                          <Badge
+                            variant="outline"
+                            className="text-xs bg-blue-50 text-blue-700 border-blue-200"
+                          >
+                            {program.duration}
+                          </Badge>
+                          <p className="text-xs text-gray-500 font-medium">
+                            {program.level}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+
+          <div className="text-center mt-6">
+            <p className="text-xs text-gray-500 italic">
+              ✨ Programs continuously enrolling • Flexible schedules available
+            </p>
           </div>
         </div>
       </div>
