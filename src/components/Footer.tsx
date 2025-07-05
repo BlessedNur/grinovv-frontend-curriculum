@@ -142,9 +142,9 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-2 text-gray-400">
-              <span>Crafted with</span>
+              <span>Code with</span>
               <span className="text-red-500 animate-pulse">❤️</span>
-              <span>in Ghana</span>
+              <span>by Joedev</span>
             </div>
           </div>
         </div>

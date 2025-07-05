@@ -156,7 +156,7 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
             <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
               <CardContent className="p-4 text-center">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-orange-200 transition-colors">
+                <div className="w-10 h-10  flex items-center justify-center mx-auto mb-2 group-hover:bg-orange-200 transition-colors">
                   <span className="text-lg">🔧</span>
                 </div>
                 <h4 className="font-semibold text-gray-900 text-sm">
@@ -170,7 +170,7 @@ const Index = () => {
 
             <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
               <CardContent className="p-4 text-center">
-                <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-indigo-200 transition-colors">
+                <div className="w-10 h-10 bg-indigo-100  flex items-center justify-center mx-auto mb-2 group-hover:bg-indigo-200 transition-colors">
                   <span className="text-lg">☁️</span>
                 </div>
                 <h4 className="font-semibold text-gray-900 text-sm">
@@ -184,7 +184,7 @@ const Index = () => {
 
             <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
               <CardContent className="p-4 text-center">
-                <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-red-200 transition-colors">
+                <div className="w-10 h-10 bg-red-100  flex items-center justify-center mx-auto mb-2 group-hover:bg-red-200 transition-colors">
                   <span className="text-lg">🔒</span>
                 </div>
                 <h4 className="font-semibold text-gray-900 text-sm">
@@ -198,7 +198,7 @@ const Index = () => {
 
             <Card className="shadow-sm hover:shadow-md transition-all duration-300 border-0 bg-white group">
               <CardContent className="p-4 text-center">
-                <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-teal-200 transition-colors">
+                <div className="w-10 h-10 bg-teal-100  flex items-center justify-center mx-auto mb-2 group-hover:bg-teal-200 transition-colors">
                   <span className="text-lg">📊</span>
                 </div>
                 <h4 className="font-semibold text-gray-900 text-sm">
@@ -229,21 +229,21 @@ const Index = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+                <div className="text-center p-4 bg-white  shadow-sm">
                   <div className="text-2xl mb-2">⚡</div>
                   <h4 className="font-semibold text-gray-900">
                     High-Speed Internet
                   </h4>
                   <p className="text-sm text-gray-600">100+ Mbps connection</p>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+                <div className="text-center p-4 bg-white  shadow-sm">
                   <div className="text-2xl mb-2">🖥️</div>
                   <h4 className="font-semibold text-gray-900">Modern PCs</h4>
                   <p className="text-sm text-gray-600">
                     Latest software & hardware
                   </p>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+                <div className="text-center p-4 bg-white  shadow-sm">
                   <div className="text-2xl mb-2">🔒</div>
                   <h4 className="font-semibold text-gray-900">
                     Secure Environment
@@ -252,7 +252,7 @@ const Index = () => {
                     Safe & private browsing
                   </p>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg shadow-sm">
+                <div className="text-center p-4 bg-white  shadow-sm">
                   <div className="text-2xl mb-2">☕</div>
                   <h4 className="font-semibold text-gray-900">Comfort Zone</h4>
                   <p className="text-sm text-gray-600">
@@ -334,7 +334,6 @@ const Index = () => {
       <section className="py-16 bg-gradient-to-br from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-           
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Why Choose <span className="text-blue-600">Grace Innovation</span>
               ?
@@ -351,7 +350,6 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white hover:-translate-y-2">
               <CardContent className="p-6 text-center">
                 <div className="relative mb-4">
-               
                   <div className="absolute -top-1 -right-1 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                     <span className="text-xs">5+</span>
                   </div>
@@ -374,7 +372,6 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white hover:-translate-y-2">
               <CardContent className="p-6 text-center">
                 <div className="relative mb-4">
-                
                   <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
                     <span className="text-xs">★</span>
                   </div>
@@ -397,7 +394,6 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white hover:-translate-y-2">
               <CardContent className="p-6 text-center">
                 <div className="relative mb-4">
-       
                   <div className="absolute -top-1 -right-1 w-6 h-6 bg-purple-400 rounded-full flex items-center justify-center">
                     <span className="text-xs">🔥</span>
                   </div>
@@ -420,7 +416,6 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white hover:-translate-y-2">
               <CardContent className="p-6 text-center">
                 <div className="relative mb-4">
-                 
                   <div className="absolute -top-1 -right-1 w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center">
                     <span className="text-xs font-bold">95%</span>
                   </div>
@@ -443,7 +438,7 @@ const Index = () => {
           {/* Additional Benefits Row */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
             <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="w-12 h-12  flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg">🎯</span>
               </div>
               <h4 className="font-semibold text-gray-900 text-sm mb-1">
@@ -455,7 +450,7 @@ const Index = () => {
             </div>
 
             <div className="text-center p-4 bg-gradient-to-br from-green-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12  rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="w-12 h-12   flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg">�</span>
               </div>
               <h4 className="font-semibold text-gray-900 text-sm mb-1">
@@ -467,7 +462,7 @@ const Index = () => {
             </div>
 
             <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="w-12 h-12  flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg">🤝</span>
               </div>
               <h4 className="font-semibold text-gray-900 text-sm mb-1">
@@ -477,7 +472,7 @@ const Index = () => {
             </div>
 
             <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="w-12 h-12  flex items-center justify-center mx-auto mb-2">
                 <span className="text-lg">💰</span>
               </div>
               <h4 className="font-semibold text-gray-900 text-sm mb-1">
@@ -486,7 +481,6 @@ const Index = () => {
               <p className="text-xs text-gray-600">Best value for money</p>
             </div>
           </div>
-
         </div>
       </section>
 

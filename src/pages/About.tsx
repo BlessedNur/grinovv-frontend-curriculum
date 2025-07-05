@@ -78,7 +78,7 @@ const About = () => {
               <Card className="border-l-4 border-l-blue-500 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-3 text-blue-600 text-lg">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-blue-100  flex items-center justify-center">
                       <span className="text-lg">🎯</span>
                     </div>
                     Our Mission
@@ -96,7 +96,7 @@ const About = () => {
               <Card className="border-l-4 border-l-purple-500 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-3 text-purple-600 text-lg">
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-purple-100  flex items-center justify-center">
                       <span className="text-lg">👁️</span>
                     </div>
                     Our Vision

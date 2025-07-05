@@ -2,8 +2,30 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
+  const handleRegisterClick = () => {
+    navigate("/register");
+  };
+
+  const handleViewProgramsClick = () => {
+    navigate("/timetable");
+  };
+
   return (
     <section className="bg-white border-b">
       {/* Hero Content */}
@@ -13,8 +35,6 @@ const Hero = () => {
           <div className="space-y-6">
             {/* Logo/Header */}
             <div className="space-y-4">
-            
-
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 <span className="text-blue-600">Shaping Lives Through</span>
                 <br />
@@ -33,8 +53,8 @@ const Hero = () => {
             {/* Discount Badge */}
             <div className="flex items-center space-x-4">
               <Badge
-                variant="destructive"
-                className="bg-red-500 text-white px-4 py-2 text-base font-semibold"
+                variant="outline"
+                className="bg-red-500/20 backdrop-blur-sm border-red-500/30 text-red-700 px-4 py-2 text-base font-semibold"
               >
                 THIS SEASON -10% DISCOUNT
               </Badge>
@@ -45,6 +65,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3"
+                onClick={handleRegisterClick}
               >
                 Register Now
               </Button>
@@ -52,62 +73,37 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3"
+                onClick={handleViewProgramsClick}
               >
                 View Programs
               </Button>
             </div>
           </div>
 
-          {/* Right Content - Service Cards */}
+          {/* Right Content - Image Carousel */}
           <div className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Main Training Card */}
-              <Card className="sm:col-span-2 shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <span className="text-2xl">👨‍💻</span>
-                    Computer Holiday Classes
-                    <Badge variant="outline" className="text-xs">
-                      ACTIVE
-                    </Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">
-                    Interactive Learning Environment with Modern Technology
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Service Cards */}
-              <Card className="shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center gap-2 text-base">
-                    <span className="text-xl">🖨️</span>
-                    Documentation
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">
-                    Printing, Scanning & Photocopying Services
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center gap-2 text-base">
-                    <span className="text-xl">💻</span>
-                    Laptop Sales
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">
-                    Quality Hardware & Computer Equipment
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <Carousel
+              className="w-full max-w-lg mx-auto"
+              plugins={[plugin.current]}
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
+            >
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="shadow-lg hover:shadow-xl transition-shadow">
+                      <CardContent className="p-0">
+                        <img
+                          src="/carousel1.jpg"
+                          alt="Grace Innovation Computer Training Center - Main"
+                          className="w-full h-auto  object-cover"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </div>
