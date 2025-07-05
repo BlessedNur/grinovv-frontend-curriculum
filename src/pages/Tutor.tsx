@@ -10,6 +10,7 @@ import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Tutor = () => {
   const tutors = [
@@ -101,13 +102,35 @@ const Tutor = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-yellow-50 py-16">
-        <div className="max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-white border-b overflow-hidden">
+        {/* Blurred Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url(/hero-image.jpg)",
+            filter: "blur(8px)",
+            transform: "scale(1.1)",
+          }}
+        />
+
+        {/* Dark Overlay for better content readability */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+
+        {/* Animated gradient orbs */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/30 to-purple-500/30 rounded-full blur-xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-pink-400/30 to-red-500/30 rounded-full blur-xl animate-pulse delay-1000" />
+        <div className="absolute top-40 right-20 w-28 h-28 bg-gradient-to-r from-green-400/30 to-blue-500/30 rounded-full blur-xl animate-pulse delay-500" />
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Meet Our <span className="text-blue-600">Expert Tutors</span>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight">
+              Meet Our{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">
+                Expert Tutors
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto font-medium drop-shadow-md">
               Learn from industry professionals with years of real-world
               experience and passion for teaching
             </p>
@@ -299,6 +322,7 @@ const Tutor = () => {
 
       {/* Footer */}
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

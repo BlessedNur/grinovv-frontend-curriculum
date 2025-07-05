@@ -10,6 +10,7 @@ import { Button } from "../components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const About = () => {
   return (
@@ -18,21 +19,54 @@ const About = () => {
 
       {/* Content with top padding to account for fixed navbar */}
       <div className="pt-16">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 py-20">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        {/* Hero Section with Blurred Background */}
+        <section className="relative py-20 overflow-hidden">
+          {/* Background Image with Blur Effect */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url(/hero-image.jpg)",
+              filter: "blur(8px)",
+              transform: "scale(1.1)",
+            }}
+          ></div>
+
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/75 to-purple-900/70"></div>
+
+          {/* Animated background elements */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              <div className="inline-flex items-center justify-center p-3 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-lg">🏢</span>
+                </div>
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 drop-shadow-lg">
                 About{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
                   Grace Innovation
                 </span>
               </h1>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                 Empowering minds through technology education and transforming
                 futures with world-class computer training since 2020.
+                <span className="font-semibold text-yellow-300">
+                  {" "}
+                  Excellence in every lesson!
+                </span>
               </p>
+              {/* Decorative line */}
+              <div className="flex items-center justify-center mt-8">
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full mx-3 shadow-lg"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -355,6 +389,9 @@ const About = () => {
         {/* Footer */}
         <Footer />
       </div>
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 };

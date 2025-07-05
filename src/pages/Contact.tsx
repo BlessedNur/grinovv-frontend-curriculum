@@ -11,6 +11,7 @@ import { Textarea } from "../components/ui/textarea";
 import { Badge } from "../components/ui/badge";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -42,17 +43,53 @@ const Contact = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-yellow-50 py-16">
-        <div className="max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Blurred Background */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Image with Blur Effect */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url(/hero-image.jpg)",
+            filter: "blur(8px)",
+            transform: "scale(1.1)",
+          }}
+        ></div>
+
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/75 to-purple-900/70"></div>
+
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-yellow-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="max-w-7xl mt-16 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Get in <span className="text-blue-600">Touch</span>
+            <div className="inline-flex items-center justify-center p-3 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">📞</span>
+              </div>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+              Get in{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+                Touch
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto drop-shadow-md leading-relaxed">
               Ready to start your tech journey? We're here to help you every
-              step of the way.
+              step of the way.{" "}
+              <span className="font-semibold text-yellow-300">
+                Let's connect!
+              </span>
             </p>
+            {/* Decorative line */}
+            <div className="flex items-center justify-center mt-8">
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+              <div className="w-3 h-3 bg-yellow-400 rounded-full mx-3 shadow-lg"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -234,9 +271,6 @@ const Contact = () => {
                   </div>
                 </CardContent>
               </Card>
-
-
-              
             </div>
           </div>
 
@@ -309,6 +343,9 @@ const Contact = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 };

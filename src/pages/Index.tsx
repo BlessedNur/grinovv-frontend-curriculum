@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsAppButton";
 import {
   Card,
   CardContent,
@@ -613,6 +614,9 @@ const Index: React.FC = () => {
         {/* Footer */}
         <Footer />
       </div>
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 };
