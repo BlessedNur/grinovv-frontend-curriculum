@@ -15,10 +15,10 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <img
-                src="/grace-logo.svg"
-                alt="Grace Innovation"
-                className="h-12 w-auto filter brightness-0 invert"
-              />
+              src="/grace-logo.svg"
+              alt="Grace Innovation Computer Training Center"
+              className="h-12 w-auto"
+            />
             </div>
             <div>
               <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -29,7 +29,6 @@ const Footer = () => {
                 futures with world-class IT training.
               </p>
             </div>
-           
           </div>
 
           {/* Quick Links & Services Combined */}
@@ -89,7 +88,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-300 py-1">
                   <span className="text-blue-400">•</span>
-                  <span>IT Support & Cyber Cafe</span>
+                  <span>IT Support/Cyber Cafe</span>
                 </div>
               </div>
             </div>
@@ -107,8 +106,12 @@ const Footer = () => {
                     <span className="text-xs">📍</span>
                   </div>
                   <div>
-                    <p className="text-gray-300">New Town Airport Douala, Cameroon</p>
-                    <p className="text-gray-400">Village Elf - After Carrefour Tam Tam</p>
+                    <p className="text-gray-300">
+                      New Town Airport Douala, Cameroon
+                    </p>
+                    <p className="text-gray-400">
+                      Village Elf - After Carrefour Tam Tam
+                    </p>
                     <p className="text-gray-400">Beside Faith Medical Center</p>
                   </div>
                 </div>
@@ -128,15 +131,13 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
-           
           </div>
         </div>
       </div>
 
       {/* Bottom Footer */}
       <div className="relative border-t border-gray-700/50 bg-black/20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
             <div className="text-gray-400">
               © 2025 Grace Innovation. All rights reserved.

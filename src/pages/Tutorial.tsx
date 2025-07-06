@@ -38,10 +38,9 @@ const Tutorial = () => {
         <div className="relative z-10 max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">
-                Frontend Development
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-white drop-shadow-lg">
+                Frontend Development Tutorial
               </span>{" "}
-              Tutorial
             </h1>
             <p className="text-lg text-gray-100 mb-6 font-medium drop-shadow-md">
               Comprehensive learning materials for modern web development

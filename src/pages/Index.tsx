@@ -76,7 +76,7 @@ const Index: React.FC = () => {
 
                 <CardHeader className="pb-4 relative z-10">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600  flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                       <span className="text-lg text-white">🖥️</span>
                     </div>
                     <div>
@@ -103,7 +103,7 @@ const Index: React.FC = () => {
                     ].map((course, index) => (
                       <div
                         key={index}
-                        className="text-center p-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+                        className="text-center p-2 bg-blue-50  hover:bg-blue-100 transition-colors"
                       >
                         <div className="text-sm mb-1">{course.icon}</div>
                         <p className="text-xs font-medium text-gray-800">
@@ -113,7 +113,7 @@ const Index: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="flex justify-between items-center bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-lg">
+                  <div className="flex justify-between items-center bg-gradient-to-r from-blue-50 to-purple-50 p-3 ">
                     <div className="text-center">
                       <p className="text-xs text-gray-600">Success Rate</p>
                       <p className="text-lg font-bold text-blue-600">95%</p>
@@ -132,7 +132,7 @@ const Index: React.FC = () => {
 
                 <CardHeader className="pb-4 relative z-10">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600  flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                       <span className="text-lg text-white">🖨️</span>
                     </div>
                     <div>
@@ -159,7 +159,7 @@ const Index: React.FC = () => {
                     ].map((service, index) => (
                       <div
                         key={index}
-                        className="text-center p-2 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors"
+                        className="text-center p-2 bg-purple-50  hover:bg-purple-100 transition-colors"
                       >
                         <div className="text-sm mb-1">{service.icon}</div>
                         <p className="text-xs font-medium text-gray-800">
@@ -186,7 +186,7 @@ const Index: React.FC = () => {
 
                 <CardHeader className="pb-4 relative z-10">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600  flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                       <span className="text-lg text-white">💻</span>
                     </div>
                     <div>
@@ -213,7 +213,7 @@ const Index: React.FC = () => {
                     ].map((item, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-2 bg-green-50 rounded-lg hover:bg-green-100 transition-colors"
+                        className="flex items-center justify-between p-2 bg-green-50  hover:bg-green-100 transition-colors"
                       >
                         <div className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
@@ -487,7 +487,7 @@ const Index: React.FC = () => {
 
             {/* Additional Benefits Row */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-              <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-white  shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12  flex items-center justify-center mx-auto mb-2">
                   <span className="text-lg">🎯</span>
                 </div>
@@ -499,7 +499,7 @@ const Index: React.FC = () => {
                 </p>
               </div>
 
-              <div className="text-center p-4 bg-gradient-to-br from-green-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-center p-4 bg-gradient-to-br from-green-50 to-white  shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12   flex items-center justify-center mx-auto mb-2">
                   <span className="text-lg">�</span>
                 </div>
@@ -511,7 +511,7 @@ const Index: React.FC = () => {
                 </p>
               </div>
 
-              <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-white  shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12  flex items-center justify-center mx-auto mb-2">
                   <span className="text-lg">🤝</span>
                 </div>
@@ -521,7 +521,7 @@ const Index: React.FC = () => {
                 <p className="text-xs text-gray-600">Personalized attention</p>
               </div>
 
-              <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-center p-4 bg-gradient-to-br from-orange-50 to-white  shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12  flex items-center justify-center mx-auto mb-2">
                   <span className="text-lg">💰</span>
                 </div>

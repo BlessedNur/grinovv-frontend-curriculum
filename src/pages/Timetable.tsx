@@ -10,7 +10,7 @@ const Timetable = () => {
       <Navbar />
       <div className="pt-16">
         {/* Hero Section with Blurred Background */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-15 overflow-hidden">
           {/* Background Image with Blur Effect */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -30,20 +30,16 @@ const Timetable = () => {
             <div className="absolute bottom-20 right-20 w-40 h-40 bg-purple-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
 
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-6xl mt-12 mb-12 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center p-3 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">📅</span>
-                </div>
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+             
+              <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6 drop-shadow-lg">
                 Course{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
                   Timetable
                 </span>
               </h1>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              <p className="text-x text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                 Explore our comprehensive course schedules and find the perfect
                 time to
                 <span className="font-semibold text-yellow-300">

@@ -44,7 +44,7 @@ const WhatsAppButton: React.FC = () => {
 
       {/* Tooltip */}
       {isHovered && (
-        <div className="absolute bottom-20 right-0 mb-2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-lg whitespace-nowrap transform transition-all duration-200 opacity-100 translate-y-0">
+        <div className="absolute bottom-20 right-0 mb-2 bg-gray-900 text-white text-sm px-3 py-2  shadow-lg whitespace-nowrap transform transition-all duration-200 opacity-100 translate-y-0">
           <span>Chat with us on WhatsApp!</span>
           {/* Tooltip arrow */}
           <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>

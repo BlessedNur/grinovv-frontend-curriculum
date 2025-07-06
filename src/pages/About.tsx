@@ -20,7 +20,7 @@ const About = () => {
       {/* Content with top padding to account for fixed navbar */}
       <div className="pt-16">
         {/* Hero Section with Blurred Background */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-15 overflow-hidden">
           {/* Background Image with Blur Effect */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -40,20 +40,15 @@ const About = () => {
             <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
 
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-6xl mt-12 mb-12 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center p-3 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">🏢</span>
-                </div>
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6 drop-shadow-lg">
                 About{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
                   Grace Innovation
                 </span>
               </h1>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              <p className="text-x text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                 Empowering minds through technology education and transforming
                 futures with world-class computer training since 2020.
                 <span className="font-semibold text-yellow-300">
@@ -163,7 +158,7 @@ const About = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Card className="text-center p-3 border-0 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-blue-50 to-blue-100 group">
                   <CardHeader className="pb-2 pt-3">
-                    <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-10 h-10 bg-blue-500  flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-lg text-white">🎓</span>
                     </div>
                     <CardTitle className="text-sm font-bold text-gray-900">
@@ -180,7 +175,7 @@ const About = () => {
 
                 <Card className="text-center p-3 border-0 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-green-50 to-green-100 group">
                   <CardHeader className="pb-2 pt-3">
-                    <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-10 h-10 bg-green-500  flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-lg text-white">🤝</span>
                     </div>
                     <CardTitle className="text-sm font-bold text-gray-900">
@@ -196,7 +191,7 @@ const About = () => {
 
                 <Card className="text-center p-3 border-0 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-purple-50 to-purple-100 group">
                   <CardHeader className="pb-2 pt-3">
-                    <div className="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-10 h-10 bg-purple-500  flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-lg text-white">🚀</span>
                     </div>
                     <CardTitle className="text-sm font-bold text-gray-900">
@@ -212,7 +207,7 @@ const About = () => {
 
                 <Card className="text-center p-3 border-0 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-orange-50 to-orange-100 group">
                   <CardHeader className="pb-2 pt-3">
-                    <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-10 h-10 bg-orange-500  flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-lg text-white">❤️</span>
                     </div>
                     <CardTitle className="text-sm font-bold text-gray-900">
@@ -243,7 +238,7 @@ const About = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-blue-50 to-indigo-50">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600  flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl text-white">👨‍💻</span>
                     </div>
                     <CardTitle className="text-lg font-bold text-gray-900">
@@ -278,7 +273,7 @@ const About = () => {
 
                 <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-green-50 to-emerald-50">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600  flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl text-white">🖨️</span>
                     </div>
                     <CardTitle className="text-lg font-bold text-gray-900">
@@ -313,7 +308,7 @@ const About = () => {
 
                 <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-purple-50 to-violet-50">
                   <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600  flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl text-white">💻</span>
                     </div>
                     <CardTitle className="text-lg font-bold text-gray-900">

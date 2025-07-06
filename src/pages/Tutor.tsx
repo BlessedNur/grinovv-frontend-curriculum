@@ -16,83 +16,80 @@ const Tutor = () => {
   const tutors = [
     {
       id: 1,
-      name: "Dr. Emmanuel Kwame",
-      title: "Senior Full-Stack Developer",
-      specialization: "React, Node.js, Python",
-      experience: "8+ Years",
-      image: "👨‍💻",
-      bio: "Expert in modern web technologies with extensive experience in building scalable applications. Passionate about teaching and mentoring aspiring developers.",
+      name: "Mr. Njuh Bronu",
+      title: "CEO & Founder",
+      specialization: "Leadership, Strategic Vision, Tech Innovation",
+      experience: "5+ Years",
+      image: "👨‍",
+      bio: "Visionary leader and founder of Grace Innovation Computer Training Center. With over 15 years of experience in technology and education, he has dedicated his career to empowering the next generation of tech professionals. His passion for innovation and commitment to excellence has made Grace Innovation a leading training center in Ghana.",
       skills: [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Python",
-        "MongoDB",
-        "PostgreSQL",
+        "Leadership",
+        ". ",
+        "Tech Innovation",
+        "Business Development",
+        "Educational Technology",
       ],
       certifications: [
-        "AWS Certified",
-        "Google Cloud Professional",
-        "Microsoft Azure",
+        "Certified Technology Leader",
+        "Business Innovation Certificate",
+        "Educational Leadership Certification",
       ],
     },
     {
       id: 2,
-      name: "Mrs. Sarah Osei",
-      title: "UI/UX Design Lead",
-      specialization: "Design Systems, Figma, Adobe Creative Suite",
-      experience: "6+ Years",
-      image: "👩‍🎨",
-      bio: "Creative designer with a passion for user-centered design. Specializes in creating beautiful and functional digital experiences.",
+      name: "Mr. Joseph Jose",
+      title: "Fullstack Web Developer (MERN)",
+      specialization:
+        "MERN Stack, Full-Stack Development, Modern Web Technologies",
+      experience: "3+ Years",
+      image: "👨‍💻",
+      bio: "Expert full-stack developer specializing in the MERN stack with extensive experience in building scalable web applications. Passionate about teaching modern web development technologies and helping students master both frontend and backend development. Known for his practical approach to teaching complex programming concepts.",
       skills: [
-        "Figma",
-        "Adobe XD",
-        "Photoshop",
-        "Illustrator",
-        "Prototyping",
-        "User Research",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React.js",
+        "Nest.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "MySQL",
+        "Python",
+        "Docker",
+        "Git/GitHub",
       ],
       certifications: [
-        "Adobe Certified Expert",
-        "Google UX Design Certificate",
-        "Figma Professional",
+        "MERN Stack Certified Developer",
+        "Full-Stack JavaScript Expert",
+        "Docker Container Specialist",
       ],
     },
     {
       id: 3,
-      name: "Mr. Joseph Mensah",
-      title: "Software Engineering Expert",
-      specialization: "Java, C#, System Architecture",
-      experience: "10+ Years",
-      image: "👨‍🔬",
-      bio: "Seasoned software engineer with deep expertise in enterprise applications and system design. Mentor to hundreds of successful developers.",
-      skills: [
-        "Java",
-        "C#",
-        ".NET",
-        "Spring Boot",
-        "Microservices",
-        "System Design",
-      ],
-      certifications: [
-        "Oracle Certified Java Professional",
-        "Microsoft Certified Developer",
-        "AWS Solutions Architect",
-      ],
-    },
-    {
-      id: 4,
-      name: "Miss Grace Asante",
-      title: "Web Development Specialist",
-      specialization: "Frontend Technologies, Responsive Design",
-      experience: "5+ Years",
+      name: "Mrs. Njuh Bella",
+      title: "Digital Office Applications Specialist",
+      specialization:
+        "Microsoft Office Suite, Design Systems, Digital Productivity",
+      experience: "2+ Years",
       image: "👩‍💻",
-      bio: "Frontend specialist passionate about creating responsive and accessible web applications. Expert in modern CSS frameworks and JavaScript libraries.",
-      skills: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Tailwind CSS", "SASS"],
+      bio: "Experienced digital office applications specialist with a decade of expertise in Microsoft Office Suite and design systems. She excels at teaching students how to master essential productivity tools and create professional documents, presentations, and spreadsheets. Her patient teaching style and attention to detail help students build confidence in digital office environments.",
+      skills: [
+        "Microsoft Word",
+        "PowerPoint",
+        "Excel",
+        "Design Systems",
+        "Document Design",
+        "Data Analysis",
+        "Presentation Design",
+        "Digital Productivity",
+      ],
       certifications: [
-        "Frontend Masters Certified",
-        "W3C Web Accessibility",
-        "Google Mobile Web Specialist",
+        "Microsoft Office Specialist Expert",
+        "Advanced Excel Certified",
+        "Digital Design Professional",
       ],
     },
   ];
@@ -125,12 +122,11 @@ const Tutor = () => {
         <div className="relative z-10 max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight">
-              Meet Our{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">
-                Expert Tutors
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-white drop-shadow-lg">
+                Meet Our Expert Tutors
               </span>
             </h1>
-            <p className="text-xl text-gray-100 max-w-3xl mx-auto font-medium drop-shadow-md">
+            <p className="text-x text-gray-100 max-w-3xl mx-auto font-medium drop-shadow-md">
               Learn from industry professionals with years of real-world
               experience and passion for teaching
             </p>
@@ -141,7 +137,7 @@ const Tutor = () => {
       {/* Tutors Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {tutors.map((tutor) => (
               <Card
                 key={tutor.id}
@@ -195,16 +191,6 @@ const Tutor = () => {
                         </Badge>
                       )}
                     </div>
-                  </div>
-
-                  {/* Key Certification */}
-                  <div>
-                    <h4 className="font-medium text-gray-900 mb-1 text-xs">
-                      Key Certification:
-                    </h4>
-                    <Badge className="bg-green-50 text-green-700 text-xs border border-green-200 px-2 py-1">
-                      {tutor.certifications[0]}
-                    </Badge>
                   </div>
                 </CardContent>
               </Card>

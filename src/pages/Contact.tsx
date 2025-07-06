@@ -22,6 +22,8 @@ const Contact = () => {
     message: "",
   });
 
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -35,8 +37,16 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission here
     console.log("Form submitted:", formData);
-    alert("Thank you for your message! We will get back to you soon.");
+
+    // Show success modal instead of alert
+    setShowSuccessModal(true);
+
+    // Reset form
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+  };
+
+  const closeModal = () => {
+    setShowSuccessModal(false);
   };
 
   return (
@@ -44,7 +54,7 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero Section with Blurred Background */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-15 overflow-hidden">
         {/* Background Image with Blur Effect */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -64,17 +74,11 @@ const Contact = () => {
           <div className="absolute bottom-20 right-20 w-40 h-40 bg-yellow-300 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="max-w-7xl mt-16 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mt-20 py-7 mb-12 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-3 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">📞</span>
-              </div>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-              Get in{" "}
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6 drop-shadow-lg">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
-                Touch
+                Get in Touch
               </span>
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto drop-shadow-md leading-relaxed">
@@ -240,7 +244,7 @@ const Contact = () => {
                     <div>
                       <p className="font-semibold text-gray-900">Phone</p>
                       <p className="text-gray-600">(+237) 650 15 97 13</p>
-                      <p className="text-gray-600">(+237) 650 15 97 13</p>
+                      <p className="text-gray-600">(+237) 653 95 61 70</p>
                     </div>
                   </div>
 
@@ -248,9 +252,15 @@ const Contact = () => {
                     <span className="text-xl">🏢</span>
                     <div>
                       <p className="font-semibold text-gray-900">Address</p>
-                      <p className="text-gray-600">123 Technology Street</p>
-                      <p className="text-gray-600">Accra, Greater Accra</p>
-                      <p className="text-gray-600">Ghana</p>
+                      <p className="text-gray-600">
+                        New Town Airport Douala, Cameroon
+                      </p>
+                      <p className="text-gray-600">
+                        Village Elf - After Carrefour Tam Tam
+                      </p>
+                      <p className="text-gray-600">
+                        Beside Faith Medical Center
+                      </p>
                     </div>
                   </div>
 
@@ -340,6 +350,127 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative bg-white  shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100 opacity-100">
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200 z-10"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* Modal content */}
+            <div className="p-8 text-center">
+              {/* Success icon with animation */}
+              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <svg
+                  className="w-10 h-10 text-white animate-bounce"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Message Sent Successfully!
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Thank you for reaching out to us! We've received your message
+                and our team will get back to you within 24 hours.
+              </p>
+
+              {/* Features */}
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50  p-4 mb-6">
+                <div className="flex items-center justify-center space-x-6 text-sm">
+                  <div className="flex items-center space-x-2 text-blue-600">
+                    <svg
+                      className="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span>Quick Response</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-purple-600">
+                    <svg
+                      className="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span>Expert Support</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  onClick={closeModal}
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Continue Browsing
+                </Button>
+                <Button
+                  onClick={() => {
+                    closeModal();
+                    // You can add navigation to WhatsApp or phone call here
+                    window.open(
+                      "https://wa.me/237650159713?text=Hello! I just sent a message through your contact form.",
+                      "_blank"
+                    );
+                  }}
+                  variant="outline"
+                  className="flex-1 border-green-600 text-green-600 hover:bg-green-50 font-semibold hover:shadow-lg transition-all duration-300"
+                >
+                  Chat on WhatsApp
+                </Button>
+              </div>
+
+              {/* Additional info */}
+              <p className="text-xs text-gray-500 mt-4">
+                Need immediate assistance? Call us at{" "}
+                <span className="font-semibold text-blue-600">
+                  (+237) 650 15 97 13
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <Footer />

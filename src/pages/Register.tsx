@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -22,11 +22,59 @@ import Footer from "../components/Footer";
 import Navbar from "@/components/Navbar";
 
 const Register = () => {
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    program: "",
+    experience: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData({
+      ...formData,
+      program: value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log("Registration submitted:", formData);
+
+    // Show success modal
+    setShowSuccessModal(true);
+
+    // Reset form
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      program: "",
+      experience: "",
+    });
+  };
+
+  const closeModal = () => {
+    setShowSuccessModal(false);
+  };
   return (
     <>
       <Navbar />
       {/* Hero Section with Blurred Background */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-15 overflow-hidden">
         {/* Background Image with Blur Effect */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -47,16 +95,10 @@ const Register = () => {
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center p-3 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">📝</span>
-              </div>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 drop-shadow-lg">
-              Register for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
-                Grace Innovation
+          <div className="text-center mt-12 mb-8">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-6 drop-shadow-lg">
+              <span className="text-white bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
+                Register for Grace Innovation
               </span>
             </h1>
             <p className="text-xl text-blue-100 mb-6 drop-shadow-md leading-relaxed">
@@ -93,74 +135,107 @@ const Register = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Enter first name" />
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="firstName">First Name</Label>
+                      <Input
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                        placeholder="Enter first name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="lastName">Last Name</Label>
+                      <Input
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                        placeholder="Enter last name"
+                        required
+                      />
+                    </div>
                   </div>
+
                   <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Enter last name" />
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Enter email address"
+                      required
+                    />
                   </div>
-                </div>
 
-                <div>
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Enter email address"
-                  />
-                </div>
+                  <div>
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="Enter phone number"
+                      required
+                    />
+                  </div>
 
-                <div>
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="Enter phone number"
-                  />
-                </div>
+                  <div>
+                    <Label htmlFor="program">Select Program</Label>
+                    <Select
+                      value={formData.program}
+                      onValueChange={handleSelectChange}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Choose your program" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="graphics-design">
+                          Graphics Design
+                        </SelectItem>
+                        <SelectItem value="web-development">
+                          Web Development
+                        </SelectItem>
+                        <SelectItem value="software-engineering">
+                          Software Engineering
+                        </SelectItem>
+                        <SelectItem value="computer-secretariat">
+                          Computer Secretariat
+                        </SelectItem>
+                        <SelectItem value="computer-maintenance">
+                          Computer Maintenance
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
 
-                <div>
-                  <Label htmlFor="program">Select Program</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Choose your program" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="graphics-design">
-                        Graphics Design
-                      </SelectItem>
-                      <SelectItem value="web-development">
-                        Web Development
-                      </SelectItem>
-                      <SelectItem value="software-engineering">
-                        Software Engineering
-                      </SelectItem>
-                      <SelectItem value="computer-secretariat">
-                        Computer Secretariat
-                      </SelectItem>
-                      <SelectItem value="computer-maintenance">
-                        Computer Maintenance
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                  <div>
+                    <Label htmlFor="experience">
+                      Previous Experience (Optional)
+                    </Label>
+                    <Textarea
+                      id="experience"
+                      name="experience"
+                      value={formData.experience}
+                      onChange={handleInputChange}
+                      placeholder="Tell us about your background or experience..."
+                    />
+                  </div>
 
-                <div>
-                  <Label htmlFor="experience">
-                    Previous Experience (Optional)
-                  </Label>
-                  <Textarea
-                    id="experience"
-                    placeholder="Tell us about your background or experience..."
-                  />
-                </div>
-
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3">
-                  Register Now
-                </Button>
+                  <Button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3"
+                  >
+                    Register Now
+                  </Button>
+                </form>
               </CardContent>
             </Card>
 
@@ -256,6 +331,141 @@ const Register = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative bg-white  shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100 opacity-100">
+            {/* Close button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200 z-10"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* Modal content */}
+            <div className="p-8 text-center">
+              {/* Success icon with animation */}
+              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <svg
+                  className="w-10 h-10 text-white animate-bounce"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                🎉 Registration Successful!
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Welcome to Grace Innovation! Your registration has been
+                submitted successfully. Our admissions team will contact you
+                within 24 hours to complete your enrollment.
+              </p>
+
+              {/* Features */}
+              <div className="bg-gradient-to-r from-green-50 to-blue-50  p-4 mb-6">
+                <div className="flex items-center justify-center space-x-6 text-sm">
+                  <div className="flex items-center space-x-2 text-green-600">
+                    <svg
+                      className="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Enrollment Confirmed</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-600">
+                    <svg
+                      className="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span>Quick Contact</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Next Steps */}
+              <div className="bg-blue-50  p-4 mb-6 text-left">
+                <h4 className="font-semibold text-blue-900 mb-2">
+                  📋 Next Steps:
+                </h4>
+                <ul className="text-sm text-blue-800 space-y-1">
+                  <li>• Check your email for confirmation details</li>
+                  <li>• Prepare required documents (ID, certificates)</li>
+                  <li>• Await our call for orientation schedule</li>
+                </ul>
+              </div>
+
+              {/* Action buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  onClick={closeModal}
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Continue Browsing
+                </Button>
+                <Button
+                  onClick={() => {
+                    closeModal();
+                    // Navigate to WhatsApp with enrollment message
+                    window.open(
+                      "https://wa.me/237650159713?text=Hello! I just completed my registration for Grace Innovation. I'm excited to start my journey!",
+                      "_blank"
+                    );
+                  }}
+                  variant="outline"
+                  className="flex-1 border-green-600 text-green-600 hover:bg-green-50 font-semibold hover:shadow-lg transition-all duration-300"
+                >
+                  Chat with Admissions
+                </Button>
+              </div>
+
+              {/* Additional info */}
+              <p className="text-xs text-gray-500 mt-4">
+                Questions? Call us at{" "}
+                <span className="font-semibold text-blue-600">
+                  (+237) 650 15 97 13
+                </span>{" "}
+                or email{" "}
+                <span className="font-semibold text-blue-600">
+                  sirbronu@gmail.com
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
       <WhatsAppButton />
     </>
