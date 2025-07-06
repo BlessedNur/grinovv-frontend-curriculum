@@ -35,7 +35,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Format the contact data for WhatsApp message
     const contactData = {
       name: formData.name,
@@ -43,7 +43,7 @@ const Contact = () => {
       phone: formData.phone || "Not provided",
       subject: formData.subject,
       message: formData.message,
-      timestamp: new Date().toLocaleString()
+      timestamp: new Date().toLocaleString(),
     };
 
     // Create formatted WhatsApp message
@@ -446,7 +446,9 @@ Please respond to this inquiry as soon as possible.
 
               {/* Description */}
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Thank you for reaching out to us! Your message has been sent directly to our team via WhatsApp and we will get back to you within 24 hours.
+                Thank you for reaching out to us! Your message has been sent
+                directly to our team via WhatsApp and we will get back to you
+                within 24 hours.
               </p>
 
               {/* Features */}
