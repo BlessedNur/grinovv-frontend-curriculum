@@ -50,21 +50,64 @@ const Register = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Registration submitted:", formData);
+
+    // Format the registration data for WhatsApp message
+    const registrationData = {
+      fullName: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      phone: formData.phone,
+      program: formData.program,
+      experience: formData.experience || "No previous experience mentioned",
+      timestamp: new Date().toLocaleString(),
+    };
+
+    // Create formatted WhatsApp message
+    const whatsappMessage = `🎓 NEW STUDENT REGISTRATION 🎓
+
+👤 Student Details:
+• Name: ${registrationData.fullName}
+• Email: ${registrationData.email}
+• Phone: ${registrationData.phone}
+• Program: ${registrationData.program}
+• Experience: ${registrationData.experience}
+
+📅 Registration Time: ${registrationData.timestamp}
+
+💰 READY FOR PAYMENT PROCESSING
+The student is ready to proceed with payment and enrollment. Please contact them to complete the registration process.
+
+📱 Contact Student: ${registrationData.phone}
+📧 Email Student: ${registrationData.email}`;
+
+    // URL encode the message
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Your WhatsApp contact number
+    const adminWhatsApp = "237653956170";
+
+    // Send to admin WhatsApp
+    const whatsappURL = `https://wa.me/${adminWhatsApp}?text=${encodedMessage}`;
+
+    // Open WhatsApp in new tab/window
+    window.open(whatsappURL, "_blank");
+
+    // Log the registration for debugging
+    console.log("Registration submitted:", registrationData);
 
     // Show success modal
     setShowSuccessModal(true);
 
-    // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      program: "",
-      experience: "",
-    });
+    // Reset form after a short delay to allow WhatsApp to open
+    setTimeout(() => {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        program: "",
+        experience: "",
+      });
+    }, 1000);
   };
 
   const closeModal = () => {
@@ -383,8 +426,9 @@ const Register = () => {
               {/* Description */}
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Welcome to Grace Innovation! Your registration has been
-                submitted successfully. Our admissions team will contact you
-                within 24 hours to complete your enrollment.
+                submitted successfully and sent directly to our admissions team
+                via WhatsApp. You will be contacted shortly to proceed with
+                payment and complete your enrollment.
               </p>
 
               {/* Features */}
@@ -415,14 +459,15 @@ const Register = () => {
               </div>
 
               {/* Next Steps */}
-              <div className="bg-blue-50  p-4 mb-6 text-left">
+              <div className="bg-blue-50 rounded-lg p-4 mb-6 text-left">
                 <h4 className="font-semibold text-blue-900 mb-2">
                   📋 Next Steps:
                 </h4>
                 <ul className="text-sm text-blue-800 space-y-1">
-                  <li>• Check your email for confirmation details</li>
+                  <li>• Your registration has been sent to our WhatsApp</li>
+                  <li>• Await our WhatsApp message for payment details</li>
                   <li>• Prepare required documents (ID, certificates)</li>
-                  <li>• Await our call for orientation schedule</li>
+                  <li>• Complete payment to secure your enrollment</li>
                 </ul>
               </div>
 
