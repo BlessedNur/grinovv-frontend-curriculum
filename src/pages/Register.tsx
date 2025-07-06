@@ -431,7 +431,7 @@ The student is ready to proceed with payment and enrollment. Please contact them
               </p>
 
               {/* Next Steps - Compact */}
-              <div className="bg-blue-50 rounded-lg p-3 mb-4 text-left">
+              <div className="bg-blue-50  p-3 mb-4 text-left">
                 <h4 className="font-semibold text-blue-900 mb-1 text-sm">
                   📋 What's Next:
                 </h4>
