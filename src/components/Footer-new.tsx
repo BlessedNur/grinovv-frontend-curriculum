@@ -119,7 +119,7 @@ const Footer = () => {
                   <div className="w-5 h-5 rounded-full bg-green-600 flex items-center justify-center">
                     <span className="text-xs">📞</span>
                   </div>
-                  <p className="text-gray-300">+233 24 123 4567</p>
+                  <p className="text-gray-300">(+237) 650 15 97 13</p>
                 </div>
 
                 <div className="flex items-center space-x-3">

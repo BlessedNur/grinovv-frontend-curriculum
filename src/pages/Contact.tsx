@@ -239,8 +239,8 @@ const Contact = () => {
                     <span className="text-xl">📞</span>
                     <div>
                       <p className="font-semibold text-gray-900">Phone</p>
-                      <p className="text-gray-600">+233 24 123 4567</p>
-                      <p className="text-gray-600">+233 20 987 6543</p>
+                      <p className="text-gray-600">(+237) 650 15 97 13</p>
+                      <p className="text-gray-600">(+237) 650 15 97 13</p>
                     </div>
                   </div>
 
