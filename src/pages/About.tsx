@@ -79,13 +79,13 @@ const About = () => {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
                   Building Tomorrow's Tech Leaders
                 </h2>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 text-x mb-4 leading-relaxed">
                   Grace Innovation Computer Training Center was founded with a
                   vision to bridge the digital divide and empower individuals
                   with cutting-edge technology skills. We believe that quality
                   education should be accessible to everyone.
                 </p>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <p className="text-gray-600 mb-8 text-x leading-relaxed">
                   Since our inception, we have trained hundreds of students in
                   various computer technologies, helping them secure rewarding
                   careers in the tech industry with our hands-on approach and
