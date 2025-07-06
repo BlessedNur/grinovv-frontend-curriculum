@@ -35,14 +35,59 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    
+    // Format the contact data for WhatsApp message
+    const contactData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || "Not provided",
+      subject: formData.subject,
+      message: formData.message,
+      timestamp: new Date().toLocaleString()
+    };
 
-    // Show success modal instead of alert
+    // Create formatted WhatsApp message
+    const whatsappMessage = `📞 NEW CONTACT INQUIRY 📞
+
+👤 Contact Details:
+• Name: ${contactData.name}
+• Email: ${contactData.email}
+• Phone: ${contactData.phone}
+• Subject: ${contactData.subject}
+
+💬 Message:
+${contactData.message}
+
+📅 Inquiry Time: ${contactData.timestamp}
+
+🔔 REQUIRES RESPONSE
+Please respond to this inquiry as soon as possible.
+
+📱 Contact Customer: ${contactData.phone}
+📧 Email Customer: ${contactData.email}`;
+
+    // URL encode the message
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Your WhatsApp contact number
+    const adminWhatsApp = "237653956170";
+
+    // Send to admin WhatsApp
+    const whatsappURL = `https://wa.me/${adminWhatsApp}?text=${encodedMessage}`;
+
+    // Open WhatsApp in new tab/window
+    window.open(whatsappURL, "_blank");
+
+    // Log the contact submission for debugging
+    console.log("Contact form submitted:", contactData);
+
+    // Show success modal
     setShowSuccessModal(true);
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    // Reset form after a short delay to allow WhatsApp to open
+    setTimeout(() => {
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    }, 1000);
   };
 
   const closeModal = () => {
@@ -401,8 +446,7 @@ const Contact = () => {
 
               {/* Description */}
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Thank you for reaching out to us! We've received your message
-                and our team will get back to you within 24 hours.
+                Thank you for reaching out to us! Your message has been sent directly to our team via WhatsApp and we will get back to you within 24 hours.
               </p>
 
               {/* Features */}
@@ -447,9 +491,9 @@ const Contact = () => {
                 <Button
                   onClick={() => {
                     closeModal();
-                    // You can add navigation to WhatsApp or phone call here
+                    // Navigate to WhatsApp with contact follow-up message
                     window.open(
-                      "https://wa.me/237650159713?text=Hello! I just sent a message through your contact form.",
+                      "https://wa.me/237653956170?text=Hello! I just sent a message through your contact form.",
                       "_blank"
                     );
                   }}
@@ -464,7 +508,7 @@ const Contact = () => {
               <p className="text-xs text-gray-500 mt-4">
                 Need immediate assistance? Call us at{" "}
                 <span className="font-semibold text-blue-600">
-                  (+237) 650 15 97 13
+                  (+237) 653 95 61 70
                 </span>
               </p>
             </div>
