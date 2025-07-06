@@ -400,11 +400,11 @@ The student is ready to proceed with payment and enrollment. Please contact them
             </button>
 
             {/* Modal content */}
-            <div className="p-8 text-center">
+            <div className="p-6 text-center">
               {/* Success icon with animation */}
-              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <svg
-                  className="w-10 h-10 text-white animate-bounce"
+                  className="w-8 h-8 text-white animate-bounce"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -419,63 +419,33 @@ The student is ready to proceed with payment and enrollment. Please contact them
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 🎉 Registration Successful!
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Welcome to Grace Innovation! Your registration has been
-                submitted successfully and sent directly to our admissions team
-                via WhatsApp. You will be contacted shortly to proceed with
-                payment and complete your enrollment.
+              <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                Your registration has been sent to our admissions team via
+                WhatsApp. You'll be contacted shortly for payment and
+                enrollment.
               </p>
 
-              {/* Features */}
-              <div className="bg-gradient-to-r from-green-50 to-blue-50  p-4 mb-6">
-                <div className="flex items-center justify-center space-x-6 text-sm">
-                  <div className="flex items-center space-x-2 text-green-600">
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>Enrollment Confirmed</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-blue-600">
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                    <span>Quick Contact</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Next Steps */}
-              <div className="bg-blue-50 rounded-lg p-4 mb-6 text-left">
-                <h4 className="font-semibold text-blue-900 mb-2">
-                  📋 Next Steps:
+              {/* Next Steps - Compact */}
+              <div className="bg-blue-50 rounded-lg p-3 mb-4 text-left">
+                <h4 className="font-semibold text-blue-900 mb-1 text-sm">
+                  📋 What's Next:
                 </h4>
-                <ul className="text-sm text-blue-800 space-y-1">
-                  <li>• Your registration has been sent to our WhatsApp</li>
-                  <li>• Await our WhatsApp message for payment details</li>
-                  <li>• Prepare required documents (ID, certificates)</li>
-                  <li>• Complete payment to secure your enrollment</li>
+                <ul className="text-xs text-blue-800 space-y-0.5">
+                  <li>• Await our WhatsApp message for payment</li>
+                  <li>• Prepare your documents (ID, certificates)</li>
                 </ul>
               </div>
 
               {/* Action buttons */}
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Button
                   onClick={closeModal}
-                  className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 py-2 text-sm"
                 >
                   Continue Browsing
                 </Button>
@@ -489,21 +459,17 @@ The student is ready to proceed with payment and enrollment. Please contact them
                     );
                   }}
                   variant="outline"
-                  className="flex-1 border-green-600 text-green-600 hover:bg-green-50 font-semibold hover:shadow-lg transition-all duration-300"
+                  className="flex-1 border-green-600 text-green-600 hover:bg-green-50 font-semibold hover:shadow-lg transition-all duration-300 py-2 text-sm"
                 >
-                  Chat with Admissions
+                  Chat with Us
                 </Button>
               </div>
 
-              {/* Additional info */}
-              <p className="text-xs text-gray-500 mt-4">
-                Questions? Call us at{" "}
+              {/* Additional info - Compact */}
+              <p className="text-xs text-gray-500 mt-3">
+                Questions? Call{" "}
                 <span className="font-semibold text-blue-600">
                   (+237) 650 15 97 13
-                </span>{" "}
-                or email{" "}
-                <span className="font-semibold text-blue-600">
-                  sirbronu@gmail.com
                 </span>
               </p>
             </div>
