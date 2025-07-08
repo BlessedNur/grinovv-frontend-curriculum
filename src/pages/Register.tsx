@@ -83,7 +83,7 @@ The student is ready to proceed with payment and enrollment. Please contact them
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     // Your WhatsApp contact number
-    const adminWhatsApp = "237653956170";
+    const adminWhatsApp = "237650159713";
 
     // Send to admin WhatsApp
     const whatsappURL = `https://wa.me/${adminWhatsApp}?text=${encodedMessage}`;

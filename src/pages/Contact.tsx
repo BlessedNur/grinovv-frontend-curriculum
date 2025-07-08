@@ -70,7 +70,7 @@ Please respond to this inquiry as soon as possible.
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     // Your WhatsApp contact number
-    const adminWhatsApp = "237653956170";
+    const adminWhatsApp = "237650159713";
 
     // Send to admin WhatsApp
     const whatsappURL = `https://wa.me/${adminWhatsApp}?text=${encodedMessage}`;
@@ -289,7 +289,7 @@ Please respond to this inquiry as soon as possible.
                     <div>
                       <p className="font-semibold text-gray-900">Phone</p>
                       <p className="text-gray-600">(+237) 650 15 97 13</p>
-                      <p className="text-gray-600">(+237) 653 95 61 70</p>
+                      <p className="text-gray-600">(+237) 650 15 97 13</p>
                     </div>
                   </div>
 
@@ -495,7 +495,7 @@ Please respond to this inquiry as soon as possible.
                     closeModal();
                     // Navigate to WhatsApp with contact follow-up message
                     window.open(
-                      "https://wa.me/237653956170?text=Hello! I just sent a message through your contact form.",
+                      "https://wa.me/237650159713?text=Hello! I just sent a message through your contact form.",
                       "_blank"
                     );
                   }}
@@ -510,7 +510,7 @@ Please respond to this inquiry as soon as possible.
               <p className="text-xs text-gray-500 mt-4">
                 Need immediate assistance? Call us at{" "}
                 <span className="font-semibold text-blue-600">
-                  (+237) 653 95 61 70
+                  (+237) 650 15 97 13
                 </span>
               </p>
             </div>

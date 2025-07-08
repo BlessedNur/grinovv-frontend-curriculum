@@ -51,8 +51,7 @@ const NotFound = () => {
                 : "translate-y-10 opacity-0"
             }`}
           >
-
- {/* Animated Robot/Computer Icon */}
+            {/* Animated Robot/Computer Icon */}
             <div className=" mt-12">
               <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full animate-bounce">
                 <span className="text-4xl">🤖</span>
@@ -80,8 +79,6 @@ const NotFound = () => {
                 track!
               </p>
             </div>
-
-           
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -146,7 +143,7 @@ const NotFound = () => {
                   </Button>
                 </Link>
                 <a
-                  href="https://wa.me/237653956170?text=Hello! I encountered a 404 error on your website."
+                  href="https://wa.me/237650159713?text=Hello! I encountered a 404 error on your website."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

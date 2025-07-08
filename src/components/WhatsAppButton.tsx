@@ -4,7 +4,7 @@ const WhatsAppButton: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   // Site owner's WhatsApp number (replace with actual number)
-  const whatsappNumber = "+237653956170"; // Replace with actual WhatsApp number
+  const whatsappNumber = "+237650159713"; // Replace with actual WhatsApp number
   const message =
     "Hello! I'm interested in your services at Grace Innovation Computer Training Center.";
 
